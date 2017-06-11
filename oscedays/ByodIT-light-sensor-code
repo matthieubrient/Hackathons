@@ -1,3 +1,8 @@
+//Connectivité de la colonne ByodIT via shield ethernet vers Dweet.io : 
+https://dweet.io/get/latest/dweet/for/ByodIT-light-sensor 
+Datavisualisation : https://freeboard.io/board/r7fGnO //
+
+
 #include <SPI.h>
 #include <Ethernet.h>
 
@@ -60,7 +65,7 @@ void httpRequest() {
     Serial.println("connected");
     analogVal = analogRead(analogIn);
     
-    // Make a HTTP request:
+    // Make a HTTP request to post light-sensor-data :
     String s = "POST /dweet/for/ByodIT-light-sensor?A0=";
     s.concat(analogVal);
     Serial.println(s);
